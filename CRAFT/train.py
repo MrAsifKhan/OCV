@@ -112,7 +112,7 @@ if __name__ == '__main__':
     train_df, validation_df = DataEx().get_df(split)
     print(f"Training with {len(train_df)} training images and {len(validation_df)} validation images ")
     
-    train_dataloader = FPC_dataset(net, train_df, "train", target_size = 1024)
+    train_dataloader = Custom_dataset(net, train_df, "train", target_size = 1024)
     train_loader = torch.utils.data.DataLoader(
         train_dataloader,
         batch_size=args.batch_size,
@@ -121,7 +121,7 @@ if __name__ == '__main__':
         drop_last=False,
         pin_memory=True)
 
-    validation_dataloader = FPC_dataset(net, validation_df, "validation", target_size = 1024)
+    validation_dataloader = Custom_dataset(net, validation_df, "validation", target_size = 1024)
     validation_loader = torch.utils.data.DataLoader(
         validation_dataloader,
         batch_size=1,
