@@ -351,7 +351,7 @@ class craft_base_dataset(data.Dataset):
 
 
 
-class FPC_dataset(craft_base_dataset):
+class Custom_dataset(craft_base_dataset):
     
     def __init__(self, net, dataframe, process_type, target_size=960, viz=False, debug=False):
         super(FPC_dataset, self).__init__(process_type, target_size, viz, debug)
